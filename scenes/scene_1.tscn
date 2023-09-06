@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://if6ah067nd5p"]
+
+[ext_resource type="PackedScene" uid="uid://dqctc0dtuuhkj" path="res://scenes/player.tscn" id="1_p6b71"]
+[ext_resource type="PackedScene" path="res://scenes/hard_bounds.tscn" id="1_yt00p"]
+
+[node name="Scene1" type="Node2D"]
+
+[node name="HardBounds" parent="." instance=ExtResource("1_yt00p")]
+rect = Rect2i(0, 0, 208, 120)
+
+[node name="Player" parent="." instance=ExtResource("1_p6b71")]
+position = Vector2(104, 60)
