@@ -1,14 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://ckwjmromto562"]
+[gd_scene load_steps=3 format=3 uid="uid://d4glxsiot3fyp"]
 
-[ext_resource type="Texture2D" uid="uid://8rcecxxes6s1" path="res://ASSETS/UI/grey_button04.png" id="1_gxp62"]
-[ext_resource type="Script" path="res://MenuScripts/returnButton.gd" id="2_q3ruo"]
+[ext_resource type="Texture2D" uid="uid://8rcecxxes6s1" path="res://ASSETS/UI/grey_button04.png" id="1_wp3s4"]
+[ext_resource type="Script" path="res://MenuScripts/returnButton.gd" id="2_fru86"]
 
-[node name="Main_game" type="Node2D"]
+[node name="Achievements" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="BackGround" type="ColorRect" parent="."]
 offset_right = 1152.0
 offset_bottom = 648.0
-color = Color(0.752941, 0.752941, 0.129412, 1)
+color = Color(0.513726, 0.0941176, 0.278431, 1)
 metadata/_edit_lock_ = true
 
 [node name="returnButton" type="TextureButton" parent="."]
@@ -16,9 +22,9 @@ offset_left = 469.0
 offset_top = 285.0
 offset_right = 659.0
 offset_bottom = 330.0
-texture_normal = ExtResource("1_gxp62")
+texture_normal = ExtResource("1_wp3s4")
 stretch_mode = 1
-script = ExtResource("2_q3ruo")
+script = ExtResource("2_fru86")
 
 [node name="ReturnToMenu" type="Label" parent="returnButton"]
 layout_mode = 0

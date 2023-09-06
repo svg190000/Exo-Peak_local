@@ -1,0 +1,119 @@
+[gd_scene load_steps=6 format=3 uid="uid://wctwydaslxgf"]
+
+[ext_resource type="Texture2D" uid="uid://8rcecxxes6s1" path="res://ASSETS/UI/grey_button04.png" id="1_5mltf"]
+[ext_resource type="Script" path="res://MenuScripts/playButton.gd" id="2_5gtc1"]
+[ext_resource type="Script" path="res://MenuScripts/settingsButton.gd" id="3_fqi74"]
+[ext_resource type="Script" path="res://MenuScripts/achievementsButton.gd" id="4_m6r6f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_meiu8"]
+bg_color = Color(0.835294, 0.137255, 0.988235, 0.278431)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.8, 0.898039, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Title_Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="BackGround" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.407843, 0.129412, 0.537255, 1)
+metadata/_edit_lock_ = true
+
+[node name="Game title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 532.0
+offset_top = 57.0
+offset_right = 974.0
+offset_bottom = 197.0
+theme_override_colors/font_color = Color(0, 0.662745, 0.670588, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 100
+text = "Exo-Peak"
+
+[node name="Left panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 256.0
+offset_right = 327.0
+offset_bottom = 618.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_meiu8")
+
+[node name="playButton" type="TextureButton" parent="Left panel"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 28.0
+offset_right = 219.0
+offset_bottom = 73.0
+texture_normal = ExtResource("1_5mltf")
+stretch_mode = 1
+script = ExtResource("2_5gtc1")
+
+[node name="Play" type="Label" parent="Left panel/playButton"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 7.0
+offset_right = 113.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Play"
+metadata/_edit_lock_ = true
+
+[node name="settingsButton" type="TextureButton" parent="Left panel"]
+offset_left = 30.0
+offset_top = 195.0
+offset_right = 220.0
+offset_bottom = 240.0
+texture_normal = ExtResource("1_5mltf")
+stretch_mode = 1
+script = ExtResource("3_fqi74")
+
+[node name="Settings" type="Label" parent="Left panel/settingsButton"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 8.0
+offset_right = 128.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Settings"
+metadata/_edit_lock_ = true
+
+[node name="achievementsButton" type="TextureButton" parent="Left panel"]
+offset_left = 30.0
+offset_top = 276.0
+offset_right = 220.0
+offset_bottom = 321.0
+texture_normal = ExtResource("1_5mltf")
+stretch_mode = 1
+script = ExtResource("4_m6r6f")
+
+[node name="Achievements" type="Label" parent="Left panel/achievementsButton"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 7.0
+offset_right = 164.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Achievements"
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="Left panel/playButton" to="Left panel/playButton" method="_on_playButton_pressed"]
+[connection signal="pressed" from="Left panel/settingsButton" to="Left panel/settingsButton" method="_on_pressed"]
+[connection signal="pressed" from="Left panel/achievementsButton" to="Left panel/achievementsButton" method="_on_pressed"]
